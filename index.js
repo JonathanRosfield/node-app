@@ -12,6 +12,8 @@ dotenv.config()
 const PORT = process.env.PORT || 5000
 const MONGOURL = process.env.MONGO_URL
 
+app.use("/api/employees", route)
+
 mongoose.connect(MONGOURL).then(()=>{
     console.log("Database Connected Successfully")
 
@@ -20,4 +22,3 @@ mongoose.connect(MONGOURL).then(()=>{
     })
 }).catch( error => console.log(error))
 
-app.use("/api/employees", route)
